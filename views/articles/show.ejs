@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/_head') %>
+</head>
+
+<body>
+    <%- include('../partials/_header') %>
+    
+    <div class="container">
+        <h1 class="">
+            <%= article.title %>
+        </h1>
+        <div>
+            <%= article.createdAt %>
+        </div>
+        <div>
+            <!-- <%= article.sanitizedHTML %> -->
+            <%- article.sanitizedHTML %>
+        </div>
+    </div>
+
+    <footer class="footer text-center">
+        <%- include('../partials/_footer') %>
+    </footer>
+</body>
+
+</html>

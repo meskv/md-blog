@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/_head') %>
+</head>
+
+<body>
+  <%- include('./partials/_header') %>
+    <div class="container">
+      <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <% articles.forEach(article=> { %>
+            <div class="col">
+              <div class="card">
+                <% if (article.postImage) { %>
+                  <img src="/files/display/<%= article.postImage  %>" class="card-img-top" alt="<%= article.title %> ">
+                  <% } else {%>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Post-It.jpg?20051031161232" alt="">
+                    <% } %>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <%= article.title %>
+                        </h5>
+                        <p class="card-text">
+                          <%= article.description %>
+                        </p>
+                        <a href="/articles/<%= article.slug %> " class="btn btn-primary">Read More</a>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">
+                          <%= article.createdAt.toLocaleString() %>
+                        </small>
+                      </div>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer text-center">
+      <%- include('./partials/_footer') %>
+    </footer>
+</body>
+
+</html>

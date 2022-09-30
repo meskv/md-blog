@@ -1,0 +1,118 @@
+.form {
+  max-width: 100%;
+  padding: 3rem 2rem;
+  width: 600px;
+  margin: 0 auto;
+  /* max-width: none; */
+  border-radius: 0.8rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+
+.form-title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: var(--margin-2);
+}
+
+.form-control {
+  margin-bottom: var(--margin);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form div input {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  outline: none;
+  border: 2px solid #c4c4c4;
+  padding: 0 30px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* label,
+input {
+  margin-bottom: var(--margin);
+} */
+
+form input[cursor] {
+  margin-left: 1rem;
+}
+
+form div {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+input:focus {
+  border: 2px solid var(--ascent-color);
+}
+
+form div i {
+  position: absolute;
+  padding: 10px;
+}
+
+.failure-icon,
+.error {
+  color: var(--error);
+}
+
+.success-icon {
+  color: var(--success);
+}
+
+.error {
+  font-size: var(--font);
+  margin-top: 5px;
+}
+
+.success-icon,
+.failure-icon {
+  right: 0;
+  opacity: 0;
+}
+
+button {
+  display: inline;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-1);
+  transition: all 0.3s ease;
+  color: var(--ascent-color);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .submission-container {
+    flex-direction: column-reverse;
+  }
+
+  form,
+  .content {
+    width: 100%;
+  }
+
+  .image {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 425px) {
+  form {
+    padding: 20px;
+  }
+}

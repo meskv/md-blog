@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/_head') %>
+</head>
+
+<body>
+    <h1 class="text-center mt-2">New Article</h1>
+    <div class="container">
+        <form action="/articles" method="POST" enctype="multipart/form-data">
+            <%- include('_form_fields') %>
+        </form>
+    </div>
+
+
+    <script>
+        // set file size limit to 3MB
+        const maxSize = 4 * 1024 * 1024;
+        var uploadField = document.getElementById("postImage");
+
+        uploadField.onChange = () => {
+            console.log(this.files[0]);
+            if (this.files[0].size > maxSize) {
+                alert("File is too big!, Max file size is 3MB");
+                this.value = "";
+            };
+        };
+    </script>
+</body>
+
+</html>

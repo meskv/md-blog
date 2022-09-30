@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/_head') %>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/article.css">
+</head>
+
+<body>
+    <%- include('../partials/_header') %>
+
+        <div>
+            <div>
+                <div class="container">
+                    <h1>
+                        <%= article.title %>
+                    </h1>
+                    <p class="subtitle">
+                        <%= article.subtitle ? article.subtitle : "" %>
+                    </p>
+                    <div class="article-image">
+                        <img src="/files/display/<%= article.postImage ? article.postImage : "https://source.unsplash.com/featured/?programming" %>" alt="">
+                    </div>
+                    <div class="author">
+                        <div class="author-info">
+                            <span class="author-name">
+                                Posted by: <%= article.author %>
+                            </span> | 
+                            <span class="author-date">
+                                <%= article.createdAt.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <%- article.sanitizedHTML %>
+            </div>
+            </article>
+
+
+            <footer class="footer text-center">
+                <%- include('../partials/_footer') %>
+            </footer>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Lora|Playfair+Display:700i,900);
+
+:root {
+  --color: #000;
+}
+body,
+html {
+  margin: 0;
+  width: 100%;
+}
+a,
+h1,
+h2,
+p {
+  color: rgba(0, 0, 0, 0.84);
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+h2 {
+  font-family: Lato, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  padding: 0;
+  margin: 56px 0 -13px -1.883px;
+  text-align: left;
+  line-height: 34.5px;
+  letter-spacing: -0.45px;
+}
+a,
+p {
+  margin-top: 21px;
+  font-family: Lora;
+  font-size: 21px;
+  letter-spacing: -0.03px;
+  line-height: 1.58;
+}
+a {
+  text-decoration: underline;
+}
+.subtitle {
+  font-family: Lato, sans-serif;
+  color: rgba(0, 0, 0, 0.54);
+  margin: 0 0 24px 0;
+}
+::selection {
+  background-color: #e6e6fa;
+}
+body {
+  margin: 0;
+  font-family: Lora, serif;
+  line-height: 1.6;
+  color: #494949;
+}
+h1,
+h2 {
+  font-family: Montserrat, sans-serif;
+}
+h1 {
+  text-shadow: 1px 1px 1px #000;
+  font-size: 38px;
+  line-height: 1.6;
+}
+h1:hover {
+  text-decoration: underline;
+}
+h2 {
+  color: #a0a0a0;
+  font-weight: 400;
+}
+li,
+p {
+  font-size: 18px;
+}
+.banner {
+  width: 800px;
+  max-width: 95%;
+  margin: 0 auto;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 50px 0;
+}
+.container {
+  width: 800px;
+  max-width: 95%;
+  margin: 50px auto;
+}
+.subtitle {
+  font-size: 30px;
+  opacity: 0.8;
+  text-shadow: 1px 1px 1px #000;
+}
+.subtitle:hover {
+  text-decoration: underline;
+}
+.link {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 249, 212, 1),
+    rgba(255, 249, 212, 1)
+  );
+  color: #636363;
+  font-weight: lighter;
+  font-size: 22px;
+  font-style: italic;
+  text-decoration: none;
+}
+.link:hover {
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 239, 138, 1),
+    rgba(255, 239, 138, 1)
+  );
+}
+@media (max-width: 960px) {
+  .container {
+    width: 95%;
+  }
+  .banner {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 720px) {
+  .container {
+    width: 100%;
+  }
+  .banner {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 540px) {
+  .container {
+    width: 100%;
+  }
+  .banner {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+/*  */
+.article-image img {
+  width: 100%;
+  max-height: 60vh;
+  margin: 0 auto;
+  display: block;
+}

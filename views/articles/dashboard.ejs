@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/_head') %>
+
+        <!-- Datatable plugin CSS file -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+
+        <link rel="stylesheet" href="/css/_dashboard.css">
+        <style>
+            .b-group>* {
+                width: 100px;
+            }
+        </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <div class='sidebar'>
+            <div class='nav'>
+                <div class='nav-item px-2'>
+                    <a href="/">
+                        <i class="fa-solid fa-book"> </i>
+                        <span class="title">Blog</span>
+                    </a>
+                </div>
+                <div class='nav-item px-2'>
+                    <a href="/">
+                        <i class="fa-solid fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </div>
+                <div class='nav-item px-2'>
+                    <a href="/files">
+                        <i class="fa-solid fa-file"></i>
+                        <span>All Files</span>
+                    </a>
+                </div>
+                <div class='nav-item px-2'>
+                    <a href="/articles/new">
+                        <i class="fa-solid fa-file-circle-plus"></i>
+                        <span>New Article</span>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class='nav-item px-2'>
+                <i class="fa-solid fa-chart-pie"></i>
+                <a href="/submissions">Submissions</a>
+            </div> -->
+            <div class='options'>
+                <div class='options-item px-2'>
+                    <a href="/auth/logout">
+                        <i class="fa-solid fa-sign-out"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='header'>
+                <div class="header-left">
+                    <h1>Dashbboard</h1>
+                </div>
+                <div class='header-right'>
+                    <p>
+                        <%= locals.user ? user: "user" %>
+                            <%= locals.isAdmin ? "(admin)" : "" %>
+                    </p>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+            <div class='summary'>
+                <div class='summary-item'>
+                    <p class='summary-text'>Total Submissions</p>
+                    <p class='summary-num'>
+                        <%= articles.length %>
+                    </p>
+                </div>
+            </div>
+            <div class='dashboard-content'>
+                <div class='dashboard-content-visual'>
+                    <h2 class='dashboard-content-text text-center'>All Submissions</h2>
+
+                    <div class="submissions">
+                        <table id="table" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>S. No.</th>
+                                    <th>title</th>
+                                    <th>Created At</th>
+                                    <th>Action</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <% for(var i=0; i < articles.length; i++) { %>
+                                    <tr>
+                                        <td>
+                                            <%= i + 1 %>
+                                        </td>
+                                        <td>
+                                            <a href="/articles/<%= articles[i].slug %>"
+                                                style="color: #222; text-decoration: underline;">
+                                                <%= articles[i].title %>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <%= articles[i].createdAt.toLocaleString() %>
+                                        </td>
+                                        <td>
+                                            <a href="/articles/<%= articles[i].slug %>"
+                                                class="btn btn-primary mb-2">Read/View</a>
+                                            <a href="/articles/edit/<%= articles[i].id %>"
+                                                class="btn btn-secondary ">Edit</a>
+                                        </td>
+                                        <td>
+                                            <form action="/articles/<%= articles[i].id %>?_method=DELETE"
+                                                class="d-inline" method="POST">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-center">
+        <%- include('../partials/_footer') %>
+    </footer>
+
+    <!-- jQuery library file -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+
+    <!-- Datatable plugin JS library file -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable({
+                order: [0, "desc"]
+            });
+        });
+    </script>
+</body>
+
+</html>

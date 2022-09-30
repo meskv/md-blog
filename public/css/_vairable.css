@@ -1,0 +1,174 @@
+/* --------------------------------------------------
+                    GOOGLE WEBFONTS
+----------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap");
+
+/* --------------------------------------------------
+                    VAIRABLES
+----------------------------------------------------- */
+
+:root {
+  /* fonts */
+  --font-1: "Poppins", sans-serif;
+  --font-2: "Roboto", sans-serif;
+
+  /* font-size */
+  --font-size-base: 1rem;
+  --font-size-biggish: 1.75rem;
+  --font-size-big: 2.25rem;
+
+  /* colors */
+  --color-primary: #fff;
+  --color-secondary: #000;
+  --color-tertiary: #f00;
+  
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey: #ccc;
+  --color-border: #ccc;
+
+  /* spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 2rem;
+
+  /* border-radius */
+  --border-radius-1: 0.25rem;
+  --border-radius-2: 0.5rem;
+  --border-radius-3: 1rem;
+  --border-radius-4: 1.5rem;
+
+  /* z-index */
+  --z-index-1: 100;
+  --z-index-2: 200;
+  --z-index-3: 300;
+  --z-index-4: 400;
+  --z-index-5: 500;
+
+  /* transition */
+  --transition-1: all 0.3s ease-in-out;
+
+  /* shadow */
+  --shadow-1: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  --shadow-3: 0 1.5rem 4rem rgba(0, 0, 0, 0.1);
+
+  /* media queries */
+  --breakpoint-1: 576px;
+  --breakpoint-2: 768px;
+  --breakpoint-3: 992px;
+  --breakpoint-4: 1200px;
+
+  /* navbar */
+  --navbar-height: 5rem;
+
+  /* sidebar */
+  --sidebar-width: 20rem;
+
+  /* hero */
+  --hero-height: 100vh;
+
+  /* footer */
+  --footer-height: 10rem;
+
+  /* container */
+  --container-width: 90%;
+  --container-max-width: 1170px;
+
+  /* grid */
+  --grid-gap: 1rem;
+
+  /* button */
+  --button-padding: 0.5rem 1rem;
+  --button-border-radius: 5px;
+
+  /* card */
+  --card-border-radius: 5px;
+  --card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+  /* form */
+  --form-border-radius: 5px;
+  --form-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-1);
+  font-weight: 700;
+}
+
+p {
+  font-family: var(--font-2);
+  font-weight: 400;
+}
+
+/* --------------------------------------------------
+                    GLOBAL
+----------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* --------------------------------------------------
+                    LAYOUT
+
+----------------------------------------------------- */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* elements */
+
+h2 {
+  font-size: var(--font-size-big);
+}
+
+h3 {
+  font-size: var(--font-size-biggish);
+}
+
+/* utilities */
+
+.font-size\:base {
+  font-size: var(--font-size-base) !important;
+}
+
+.font-size\:biggish {
+  font-size: var(--font-size-biggish) !important;
+}
+
+.font-size\:big {
+  font-size: var(--font-size-big) !important;
+}
