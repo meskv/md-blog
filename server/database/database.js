@@ -11,10 +11,10 @@ mongoose.connect(uri, {
     useUnifiedTopology: true,
 }, (err, db) => {
     if (err) {
-        console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
+        
         process.exit(1);
     } else {
-        console.log(`connection succeeded to DB: ${DB_NAME}`);
+        
     }
 });
 

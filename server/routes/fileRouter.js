@@ -123,7 +123,7 @@ router.get('/:filename', (req, res) => {
 // @route DELETE /files/:filename
 // @desc  Delete file
 router.delete('/:filename', async (req, res) => {
-    console.log(req.params.filename);
+    
     const file = await gfs.files.findOne({ filename: req.params.filename });
     if (!file) {
         return res.status(404).json({

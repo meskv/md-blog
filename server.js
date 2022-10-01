@@ -59,5 +59,5 @@ app.get('*', (req, res) => {
 require('./server/database/database');
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    
 });
