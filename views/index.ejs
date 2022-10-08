@@ -7,37 +7,54 @@
 
 <body>
   <%- include('./partials/_header') %>
-    <div class="container">
-      <div class="container mt-4">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <% articles.forEach(article=> { %>
-            <div class="col">
-              <div class="card">
-                <% if (article.postImage) { %>
-                  <img src="/files/display/<%= article.postImage  %>" class="card-img-top" alt="<%= article.title %> ">
-                  <% } else {%>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Post-It.jpg?20051031161232" alt="">
+
+
+    <section class="blog section" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="section-title padd-15">
+            <h2>Recent Posts</h2>
+          </div>
+        </div>
+
+        <!-- row -->
+        <div class="row">
+          <% for( let i=0; i < articles.length; i++ ) { %>
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner">
+                <div class="blog-img shine">
+                  <% if (articles[i].postImage) { %>
+                    <img src="/files/display/<%= articles[i].postImage %>" alt="Blog">
                     <% } %>
-                      <div class="card-body">
-                        <h5 class="card-title">
-                          <%= article.title %>
-                        </h5>
-                        <p class="card-text">
-                          <%= article.description %>
-                        </p>
-                        <a href="/articles/<%= article.slug %> " class="btn btn-primary">Read More</a>
+                      <img
+                        src="Photo by Pixabay from Pexels: https://www.pexels.com/photo/blog-icon-information-internet-262508/"
+                        alt="Blog">
+                      <div class="blog-date">
+                        <%= articles[i].createdAt.toDateString() %>
                       </div>
-                      <div class="card-footer">
-                        <small class="text-muted">
-                          <%= article.createdAt.toLocaleString() %>
-                        </small>
-                      </div>
+                </div>
+                <div class="blog-info">
+                  <h4 class="blog-title">
+                    <%= articles[i].title %>
+                  </h4>
+                  <p class="blog-description">
+                    <%= articles[i].description %>
+                  </p>
+                  <!-- <p class="blog-tags">Tags :
+                    <% articles[i].keywords.forEach(tag => { %>
+                    <a href="/"><%= tag %> </a>
+                    <% }) %>
+                  </p> -->
+                  <a href="/articles/<%= articles[i].slug %> " class="btn btn-primary">Read More</a>
+                </div>
               </div>
             </div>
-            <% }) %>
+            <% } %>
         </div>
+        <!-- row -->
+
       </div>
-    </div>
+    </section>
 
     <footer class="footer text-center">
       <%- include('./partials/_footer') %>

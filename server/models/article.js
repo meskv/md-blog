@@ -25,7 +25,7 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 2,
-        maxlength: 40,
+        maxlength: 100,
         trim: true
     },
     subtitle: {

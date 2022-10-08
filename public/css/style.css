@@ -1,7 +1,27 @@
 @import "./_reset.css";
-@import "./_vairable.css";  
-@import "./_form.css";  
+@import "./_global.css";
+@import "./_form.css";
 @import "./index.css";
+@import "./_card.css";
+
+/* GENERAL STYLES */
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+/* GENERAL STYLES */
 
 /* /* Language: css */
 /* Path: public\css\style.css */

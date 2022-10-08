@@ -38,53 +38,6 @@
   }
 }
 
-.card-img-top {
-  width: 100%;
-  object-fit: cover;
-}
-
-.card {
-  border: none;
-}
-
-.card-title {
-  font-weight: 700;
-}
-
-.card-text {
-  font-size: 0.9rem;
-}
-
-.card-text,
-.card-title {
-  text-transform: uppercase;
-}
-
-.card-text {
-  margin-bottom: 1.25rem;
-}
-
-.card-footer {
-  background: transparent;
-  border-top: transparent;
-  transition: all 0.3s linear;
-}
-
-.card-footer:hover {
-  background: rgba(247, 247, 247);
-}
-
-.card-footer a {
-  color: var(--dark);
-  font-size: 1.3rem;
-  transition: all 0.3s linear;
-}
-
-.card-footer a:hover {
-  color: var(--primary);
-  text-decoration: none;
-}
-
 .footer {
   background: var(--dark);
   color: var(--light);
