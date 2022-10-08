@@ -14,6 +14,21 @@
     </div>
 
 
+    <!-- Showdown Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+
+    <script>
+        const textEditor = document.querySelector('#markdown');
+        const textPreview = document.querySelector('#preview');
+        const converter = new showdown.Converter({ tables: true, tasklists: true, smoothLivePreview: true })
+
+        textEditor.addEventListener('keyup', event => {
+            const { value } = event.target;
+            html = converter.makeHtml(value);
+            textPreview.innerHTML = html;
+        })
+    </script>
+
     <script>
         // set file size limit to 3MB
         const maxSize = 4 * 1024 * 1024;
