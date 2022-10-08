@@ -3,7 +3,13 @@
 
 <head>
     <%- include('../partials/_head') %>
-        <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/css/article.css">
+    <meta name="description" content="<%= article.description %> " >
+    <meta name="keywords" content="<%= article.keywords %>">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="1">
+    <meta name="author" content="<%= article.author %>">
+
 </head>
 
 <body>
