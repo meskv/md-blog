@@ -54,7 +54,6 @@ app.get('*', (req, res) => {
     res.status(404).render('404');
 });
 
-
 // database
 require('./server/database/database');
 

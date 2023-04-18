@@ -25,13 +25,13 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 2,
-        maxlength: 100,
+        maxlength: 200,
         trim: true
     },
     subtitle: {
         type: String,
         minlength: 2,
-        maxlength: 100,
+        maxlength: 200,
         trim: true
     },
     description: {
@@ -77,4 +77,3 @@ articleSchema.pre('validate', function (next) {
 
 
 module.exports = mongoose.model('Article', articleSchema);
-// module.exports = mongoose.model('User', userSchema);

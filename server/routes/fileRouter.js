@@ -86,6 +86,7 @@ router.get('/', isAuth, (req, res) => {
 // @route POST /upload
 // @desc Uploads file to DB
 router.post('/upload', upload.single('file'), (req, res) => {
+    console.log(req.file);
     res.json({ file: req.file })
     // res.redirect('/')
 })

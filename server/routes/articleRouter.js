@@ -1,8 +1,8 @@
 const Article = require('../models/article');
+const { upload } = require('../helpers/fileUploader');
 // const User = require('../models/article');
 
 const express = require('express');
-const { upload } = require('../helpers/fileUploader');
 const router = express.Router();
 
 
